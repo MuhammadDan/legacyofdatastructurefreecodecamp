@@ -1,0 +1,35 @@
+** start of script.js **
+
+// question: We've defined a function countOnline which accepts one argument, allUsers. Use a for...in statement inside this function to loop through the allUsers object and return the number of users whose online property is set to true. An example of an object which could be passed to countOnline is shown below. Each user will have an online property set to either true or false.
+const users = {
+  Alan: {
+    online: false
+  },
+  Jeff: {
+    online: true
+  },
+  Sarah: {
+    online: false
+  }
+}
+
+function countOnline(allUsers) {
+  // Only change code below this line
+  let onlineuser = 0;
+  for (const num in allUsers){
+    if(allUsers[num]['online']){
+        onlineuser = onlineuser+1;
+    }
+  }
+  return onlineuser
+  // Only change code above this line
+}
+
+console.log(countOnline(users));
+// output: 1. The function countOnline should use a for in statement to iterate through the object keys of the object passed to it.
+// Passed:2. The function countOnline should return 1 when the object { Alan: { online: false }, Jeff: { online: true }, Sarah: { online: false } } is passed to it
+// Passed:3. The function countOnline should return 2 when the object { Alan: { online: true }, Jeff: { online: false }, Sarah: { online: true } } is passed to it
+// Passed:4. The function countOnline should return 0 when the object { Alan: { online: false }, Jeff: { online: false }, Sarah: { online: false } } is passed to it
+
+** end of script.js **
+

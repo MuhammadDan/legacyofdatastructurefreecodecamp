@@ -1,0 +1,13 @@
+** start of script.js **
+
+const arr = [2, 4, 5, 1, 7, 5, 2, 1];
+// Only change code below this line
+let newArray = arr.splice(0,1)
+let newArray1 = arr.splice(3,4)
+// Only change code above this line
+console.log(arr);
+console.log(newArray);
+console.log(newArray1);
+
+** end of script.js **
+

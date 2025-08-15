@@ -1,0 +1,18 @@
+** start of script.js **
+
+function rangeOfNumbers(startNum, endNum) {
+  var result= []
+  console.log("StartNum<=",startNum,"EndNum",endNum)
+  if(startNum == endNum){
+    return [startNum];
+  }
+  else{
+    var Numbers = rangeOfNumbers(startNum, endNum-1)
+    console.log(Numbers)
+    Numbers.push(endNum)
+    return Numbers
+  }
+};
+
+** end of script.js **
+

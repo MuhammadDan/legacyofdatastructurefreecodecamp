@@ -1,0 +1,21 @@
+** start of script.js **
+
+function factorialize(num) {
+  var sum =1;
+  while(num>0){
+    sum = sum*num;
+    num--;
+    console.log(sum)
+  }
+  return sum;
+}
+
+factorialize(5);
+// output: factorialize(5) should return a number.
+// Passed:2. factorialize(5) should return 120.
+// Passed:3. factorialize(10) should return 3628800.
+// Passed:4. factorialize(20) should return 2432902008176640000.
+// Passed:5. factorialize(0) should return 1.
+
+** end of script.js **
+

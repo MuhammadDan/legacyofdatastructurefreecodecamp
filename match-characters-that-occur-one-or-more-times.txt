@@ -1,0 +1,8 @@
+** start of script.js **
+
+let difficultSpelling = "Mississippi";
+let myRegex = /s+/g; // Change this line
+let result = difficultSpelling.match(myRegex);
+
+** end of script.js **
+

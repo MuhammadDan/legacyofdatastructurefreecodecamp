@@ -1,0 +1,15 @@
+** start of script.js **
+
+function htmlColorNames(arr) {
+  // Only change code below this line
+  const startindex = 0;
+  const amountToDelete = 2;
+  arr.splice(startindex,amountToDelete,'DarkSalmon','BlanchedAlmond')
+  // Only change code above this line
+  return arr;
+}
+
+console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurquoise', 'FireBrick']));
+
+** end of script.js **
+

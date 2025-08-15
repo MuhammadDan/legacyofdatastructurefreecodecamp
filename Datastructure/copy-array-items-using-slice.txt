@@ -1,0 +1,15 @@
+** start of script.js **
+
+function forecast(arr) {
+  // Only change code below this line
+  let todaysweather = arr.slice(2,4)
+  return todaysweather;
+}
+
+// Only change code above this line
+console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
+
+// output: [ 'warm', 'sunny' ]
+
+** end of script.js **
+
