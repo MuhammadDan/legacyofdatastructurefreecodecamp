@@ -1,0 +1,27 @@
+** start of script.js **
+
+// Question: Repeat a given string str (first argument) for num times (second argument). Return an empty string if num is not a positive number. For the purpose of this challenge, do not use the built-in .repeat() method.
+
+function repeatStringNumTimes(str, num) {
+  var newstr = "";
+  while(num>0){
+    newstr += str;
+    num=num-1;
+  }
+ 
+  return newstr;
+}
+
+repeatStringNumTimes('abc', 3);
+
+//Output: 1. repeatStringNumTimes("*", 3) should return the string ***.
+// Passed:2. repeatStringNumTimes("abc", 3) should return the string abcabcabc.
+// Passed:3. repeatStringNumTimes("abc", 4) should return the string abcabcabcabc.
+// Passed:4. repeatStringNumTimes("abc", 1) should return the string abc.
+// Passed:5. repeatStringNumTimes("*", 8) should return the string ********.
+// Passed:6. repeatStringNumTimes("abc", -2) should return an empty string ("").
+// Passed:7. The built-in repeat() method should not be used.
+// Passed:8. repeatStringNumTimes("abc", 0) should return "".
+
+** end of script.js **
+
