@@ -1,0 +1,28 @@
+** start of script.js **
+
+// Question: Check if a value is classified as a boolean primitive. Return true or false.
+
+// Boolean primitives are true and false.
+
+function booWho(bool) {
+  if(typeof bool == "boolean"){
+    return true
+  }
+  return false;
+}
+
+booWho(null);
+// output: . booWho(true) should return true.
+// Passed:2. booWho(false) should return true.
+// Passed:3. booWho([1, 2, 3]) should return false.
+// Passed:4. booWho([].slice) should return false.
+// Passed:5. booWho({ "a": 1 }) should return false.
+// Passed:6. booWho(1) should return false.
+// Passed:7. booWho(NaN) should return false.
+// Passed:8. booWho("a") should return false.
+// Passed:9. booWho("true") should return false.
+// Passed:10. booWho("false") should return false.
+
+
+** end of script.js **
+
