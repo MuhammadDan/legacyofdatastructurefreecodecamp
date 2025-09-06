@@ -1,0 +1,127 @@
+** start of script.js **
+
+function telephoneCheck(str) {
+  
+  if (str.indexOf("(") === -1 && str.indexOf(")") > -1){
+    return false;
+  }
+  
+  if (str[0] === "-") {
+    return false;
+  }
+
+  if (str.indexOf(")") - str.indexOf("(")  >= 5){
+    return false;
+  }
+
+  let polishedPhone = str.replace(/-| /g, "");
+
+  if (polishedPhone.indexOf("(") < polishedPhone.indexOf(")")){
+    polishedPhone = polishedPhone.replace(/\(|\)/g,"");
+  }
+  console.log(polishedPhone);
+  return /^(1\s?)?(\(\d{3}\)|\d{3})([\s\-]?)\d{3}([\s\-]?)\d{4}$/.test(str);
+}
+
+let result = telephoneCheck("1 (555) 555-5555");
+console.log(result);
+
+** end of script.js **
+
+explanation of this code
+Zaroor Muhammad bhai — chaliye is `telephoneCheck` function ko **line-by-line Roman Urdu** mein breakdown karte hain taake har logic ka maksad clear ho jaye. Yeh function basically check karta hai ke diya gaya phone number valid US format mein hai ya nahi.
+
+---
+
+### 🔍 Line-by-Line Explanation:
+
+```js
+function telephoneCheck(str) {
+```
+➡️ Function ka naam `telephoneCheck` hai, aur yeh ek string `str` leta hai — jo phone number hai.
+
+---
+
+```js
+if (str.indexOf("(") === -1 && str.indexOf(")") > -1){
+  return false;
+}
+```
+➡️ Agar opening bracket `"("` nahi hai lekin closing bracket `")"` hai, toh yeh galat format hai.  
+🧠 **Example:** `"555)555-5555"` → invalid.
+
+---
+
+```js
+if (str[0] === "-") {
+  return false;
+}
+```
+➡️ Agar number `"-"` se start ho raha hai, toh yeh bhi invalid hai.  
+🧠 **Example:** `"-1 (555) 555-5555"` → invalid.
+
+---
+
+```js
+if (str.indexOf(")") - str.indexOf("(") >= 5){
+  return false;
+}
+```
+➡️ Yeh check karta hai ke `"("` aur `")"` ke darmiyan 5 ya us se zyada characters na hon.  
+🧠 **Example:** `"(12345) 555-5555"` → invalid.
+
+---
+
+```js
+let polishedPhone = str.replace(/-| /g, "");
+```
+➡️ Yeh line phone number se **spaces** aur **dashes** hata deti hai — taake sirf digits aur brackets bachein.  
+🧠 `"1 (555) 555-5555"` → `"1(555)5555555"`
+
+---
+
+```js
+if (polishedPhone.indexOf("(") < polishedPhone.indexOf(")")){
+  polishedPhone = polishedPhone.replace(/\(|\)/g,"");
+}
+```
+➡️ Agar brackets sahi order mein hain (`(` pehle aaye, `)` baad mein), toh unko bhi hata diya jata hai.  
+🧠 `"1(555)5555555"` → `"15555555555"`
+
+---
+
+```js
+console.log(polishedPhone);
+```
+➡️ Debugging ke liye cleaned-up phone number console mein print hota hai.
+
+---
+
+```js
+return /^(1\s?)?(\(\d{3}\)|\d{3})([\s\-]?)\d{3}([\s\-]?)\d{4}$/.test(str);
+```
+➡️ Yeh **final validation** hai using **regex**:
+- `1` country code optional hai
+- Area code `555` ya `(555)` ho sakta hai
+- Baaki digits 3 aur 4 ke group mein hone chahiye
+- Beech mein space ya dash optional hai
+
+🧠 **Valid Examples:**
+- `"555-555-5555"`
+- `"1 (555) 555-5555"`
+- `"5555555555"`
+
+🧠 **Invalid Examples:**
+- `"55 55-55-555-5"`
+- `"123)-456-7890"`
+
+---
+
+```js
+let result = telephoneCheck("1 (555) 555-5555");
+console.log(result);
+```
+➡️ Function ko test kiya gaya ek valid number ke saath. Output `true` aayega.
+
+
+
